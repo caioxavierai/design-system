@@ -1,0 +1,9 @@
+<span class="snt-badge" [class]="'snt-badge snt-badge-' + variant">
+  <span
+    *ngIf="dot"
+    class="snt-badge-dot"
+    [class.snt-badge-dot-pulse]="pulse"
+    aria-hidden="true"
+  ></span>
+  <ng-content></ng-content>
+</span>

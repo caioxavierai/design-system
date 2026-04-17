@@ -1,0 +1,76 @@
+/* ════════════════════════════════════════════════════
+   SUNTER DS — globals.css para projetos React/Next.js
+   ════════════════════════════════════════════════════
+
+   Ordem de importação obrigatória:
+   1. Google Fonts
+   2. sunter-tokens.css
+   3. Tailwind directives
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Manrope:wght@200;300;400;500&display=swap');
+@import '../sunter-tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* data-theme="dark" ou "light" é definido pelo useTheme hook */
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background: var(--snt-bg-0);
+    color: var(--snt-tx-1);
+    font-weight: 300;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  /* Shimmer border — usada no Card shimmer */
+  .shimmer-border {
+    position: relative;
+  }
+
+  .shimmer-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from var(--snt-angle),
+      transparent 0%,
+      #C96442 20%,
+      #D97757 40%,
+      transparent 60%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: snt-spin-border 3s linear infinite;
+  }
+
+  /* Skeleton loading warm */
+  .skeleton-warm {
+    background: linear-gradient(
+      90deg,
+      var(--snt-sk-a) 0%,
+      var(--snt-sk-b) 40%,
+      var(--snt-sk-a) 80%
+    );
+    background-size: 600px 100%;
+    animation: sntSkeleton 1.8s ease-in-out infinite;
+  }
+}
+
+@keyframes snt-spin-border {
+  to { --snt-angle: 360deg; }
+}

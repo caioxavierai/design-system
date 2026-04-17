@@ -1,0 +1,36 @@
+/*
+  SUNTER DS — Override de Tema PrimeNG
+  Aplique este arquivo no angular.json > styles ou importe no styles.scss
+  DEPOIS do import do sunter-tokens.css
+*/
+
+:root {
+  /* ── Accent ── */
+  --primary-color: #C96442;
+  --primary-color-text: #ffffff;
+  --highlight-bg: rgba(201, 100, 66, .12);
+  --highlight-text-color: #C96442;
+  --focus-ring: 0 0 0 2px rgba(201, 100, 66, .32);
+
+  /* ── Superfícies ── */
+  --surface-ground:  var(--snt-bg-0);
+  --surface-section: var(--snt-bg-1);
+  --surface-card:    var(--snt-bg-2);
+  --surface-overlay: var(--snt-bg-3);
+  --surface-border:  var(--snt-bd-2);
+  --surface-hover:   var(--snt-bg-4);
+
+  /* ── Texto ── */
+  --text-color:           var(--snt-tx-1);
+  --text-color-secondary: var(--snt-tx-2);
+
+  /* ── Inputs ── */
+  --input-bg:                  var(--snt-bg-2);
+  --input-border:              var(--snt-bd-2);
+  --input-hover-border-color:  var(--snt-bd-3);
+  --input-focus-border-color:  #C96442;
+
+  /* ── Radius e Font ── */
+  --border-radius: var(--snt-r-sm);
+  --font-family:   var(--snt-font-sans);
+}

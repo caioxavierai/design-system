@@ -1,0 +1,339 @@
+/* ════════════════════════════════════════════════════
+   SUNTER DESIGN SYSTEM — TOKENS v3.0 "Warm Intelligence"
+   Sunter Tecnologia · sunter.com.br · 2026
+
+   Como usar:
+   1. Copie este arquivo para o projeto
+   2. Importe no CSS/SCSS global:
+      @import 'sunter-tokens.css';
+   3. Adicione no <html>: data-theme="dark" ou data-theme="light"
+   ════════════════════════════════════════════════════ */
+
+/* ── @property para animações avançadas (shimmer border) ── */
+@property --snt-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ── TIPOGRAFIA ── */
+:root {
+  --snt-font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --snt-font-mono: 'Fragment Mono', 'Courier New', monospace;
+}
+
+/* ── ESPAÇAMENTO (grid de 4px) ── */
+:root {
+  --snt-space-1:  4px;
+  --snt-space-2:  8px;
+  --snt-space-3:  12px;
+  --snt-space-4:  16px;
+  --snt-space-5:  20px;
+  --snt-space-6:  24px;
+  --snt-space-8:  32px;
+  --snt-space-10: 40px;
+  --snt-space-12: 48px;
+  --snt-space-16: 64px;
+  --snt-space-20: 80px;
+  --snt-space-24: 96px;
+}
+
+/* ── BORDER RADIUS ── */
+:root {
+  --snt-r-none: 0px;
+  --snt-r-xs:   2px;
+  --snt-r-sm:   4px;   /* padrão do sistema */
+  --snt-r-md:   8px;
+  --snt-r-lg:   16px;
+  --snt-r-full: 9999px;
+}
+
+/* ── EASING (spring premium) ── */
+:root {
+  --snt-ease:      200ms cubic-bezier(.16,1,.3,1);
+  --snt-ease-md:   350ms cubic-bezier(.16,1,.3,1);
+  --snt-ease-lg:   500ms cubic-bezier(.16,1,.3,1);
+  --snt-ease-slow: 800ms cubic-bezier(.16,1,.3,1);
+}
+
+/* ── MOTION — Durações ── */
+:root {
+  --snt-dur-instant:  80ms;
+  --snt-dur-fast:     200ms;
+  --snt-dur-base:     400ms;
+  --snt-dur-reveal:   650ms;
+  --snt-dur-enter:    700ms;
+  --snt-dur-slow:     1200ms;
+  --snt-dur-counter:  2200ms;
+}
+
+/* ── MOTION — Easings nomeados ── */
+:root {
+  --snt-spring:       cubic-bezier(.16, 1, .3, 1);   /* padrão do sistema — overshoot suave */
+  --snt-ease-out-c3:  cubic-bezier(.22, 1, .36, 1);  /* ease-out cúbico — contadores, counters */
+  --snt-ease-in-out:  cubic-bezier(.4, 0, .2, 1);    /* genérico suave */
+  --snt-linear:       linear;
+}
+
+/* ── MOTION — Stagger padrão ── */
+:root {
+  --snt-stagger-1: 100ms;
+  --snt-stagger-2: 200ms;
+  --snt-stagger-3: 300ms;
+  --snt-stagger-4: 400ms;
+  --snt-stagger-5: 500ms;
+}
+
+/* ── MOTION — Distâncias de reveal ── */
+:root {
+  --snt-reveal-y:   36px;   /* translateY padrão (.reveal) */
+  --snt-reveal-x:   48px;   /* translateX lateral (.reveal-left / .reveal-right) */
+  --snt-split-y:    60px;   /* translateY do word-split do H1 */
+}
+
+/* ── MOTION — Parallax speeds ── */
+:root {
+  --snt-parallax-content: 0.12;   /* multiplicador scrollY para hero content */
+  --snt-parallax-glow:    0.20;   /* multiplicador scrollY para hero glow */
+  --snt-parallax-fade-px: 500;    /* scrollY em que hero-content chega a opacity 0 */
+}
+
+/* ── MOTION — Cursor blob ── */
+:root {
+  --snt-blob-size:  500px;
+  --snt-blob-lag:   0.06;   /* fator de lerp: menor = mais lag */
+}
+
+/* ── MOTION — Partículas canvas ── */
+:root {
+  --snt-particle-count:    60;
+  --snt-particle-max-dist: 140px;   /* distância máxima para conexões */
+  --snt-particle-repulse:  100px;   /* raio de repulsão pelo mouse */
+  --snt-particle-damping:  0.98;    /* damping de velocidade por frame */
+}
+
+/* ── MOTION — Magnetic buttons ── */
+:root {
+  --snt-magnetic-factor: 0.25;   /* fração do delta cursor aplicada ao translate */
+}
+
+/* ── ACCENT (invariável nos dois modos) ── */
+:root {
+  --snt-accent:       #C96442;
+  --snt-accent-warm:  #D97757;
+  --snt-accent-light: #E8A87C;
+  --snt-accent-glow:  rgba(201, 100, 66, .18);
+}
+
+/* ── SEMÂNTICAS ── */
+:root {
+  --snt-success: #5ECF8A;
+  --snt-warning: #D4914A;
+  --snt-danger:  #E06060;
+}
+
+/* ════════════════════════════════════════
+   DARK MODE (padrão)
+   ════════════════════════════════════════ */
+:root,
+[data-theme="dark"] {
+  /* Backgrounds */
+  --snt-bg-0: #0A0908;
+  --snt-bg-1: #13120F;
+  --snt-bg-2: #1C1A16;
+  --snt-bg-3: #26231E;
+  --snt-bg-4: #302D27;
+  --snt-bg-5: #3D3930;
+
+  /* Texto */
+  --snt-tx-1: #F5F4ED;
+  --snt-tx-2: #B0AEA5;
+  --snt-tx-3: #87867F;
+  --snt-tx-4: #5E5D59;
+
+  /* Bordas */
+  --snt-bd-1: rgba(245, 244, 237, .05);
+  --snt-bd-2: rgba(245, 244, 237, .09);
+  --snt-bd-3: rgba(245, 244, 237, .16);
+  --snt-bd-a: rgba(201, 100, 66,  .36);
+
+  /* Sombras */
+  --snt-sh-sm:      0 2px 8px rgba(0, 0, 0, .40);
+  --snt-sh-md:      0 4px 20px rgba(0, 0, 0, .55);
+  --snt-sh-lg:      0 12px 48px rgba(0, 0, 0, .70);
+  --snt-sh-glow:    0 0 32px rgba(201, 100, 66, .18);
+  --snt-sh-glow-lg: 0 0 64px rgba(201, 100, 66, .12);
+  --snt-ring:       0 0 0 2px rgba(201, 100, 66, .32);
+
+  /* Skeleton */
+  --snt-sk-a: #1C1A16;
+  --snt-sk-b: #302D27;
+}
+
+/* ════════════════════════════════════════
+   LIGHT MODE
+   ════════════════════════════════════════ */
+[data-theme="light"] {
+  /* Backgrounds */
+  --snt-bg-0: #F5F0E8;
+  --snt-bg-1: #EDE8DF;
+  --snt-bg-2: #FFFFFF;
+  --snt-bg-3: #FBF8F3;
+  --snt-bg-4: #F0EBE3;
+  --snt-bg-5: #E8E1D7;
+
+  /* Texto */
+  --snt-tx-1: #1A1714;
+  --snt-tx-2: #4A4540;
+  --snt-tx-3: #7A756E;
+  --snt-tx-4: #B0A89E;
+
+  /* Bordas */
+  --snt-bd-1: rgba(26, 23, 20, .05);
+  --snt-bd-2: rgba(26, 23, 20, .09);
+  --snt-bd-3: rgba(26, 23, 20, .16);
+  --snt-bd-a: rgba(201, 100, 66, .40);
+
+  /* Sombras */
+  --snt-sh-sm:      0 2px 8px rgba(0, 0, 0, .06);
+  --snt-sh-md:      0 4px 20px rgba(0, 0, 0, .08);
+  --snt-sh-lg:      0 12px 48px rgba(0, 0, 0, .12);
+  --snt-sh-glow:    0 0 32px rgba(201, 100, 66, .14);
+  --snt-sh-glow-lg: 0 0 64px rgba(201, 100, 66, .08);
+  --snt-ring:       0 0 0 2px rgba(201, 100, 66, .28);
+
+  /* Skeleton */
+  --snt-sk-a: #F0EBE3;
+  --snt-sk-b: #E8E1D7;
+
+  /* Semânticas ajustadas para light */
+  --snt-success: #2E8A55;
+  --snt-warning: #9A6020;
+  --snt-danger:  #B03030;
+}
+
+/* ════════════════════════════════════════
+   UTILITÁRIOS GLOBAIS DE ANIMAÇÃO
+   ════════════════════════════════════════ */
+
+/* Shimmer border (efeito AI-era) */
+.shimmer-border {
+  position: relative;
+}
+.shimmer-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--snt-angle),
+    transparent 0%,
+    #C96442 20%,
+    #D97757 40%,
+    transparent 60%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: snt-spin-border 3s linear infinite;
+}
+
+.shimmer-border-hover::before {
+  opacity: 0;
+  animation: none;
+  transition: opacity var(--snt-ease-md);
+}
+.shimmer-border-hover:hover::before {
+  opacity: 1;
+  animation: snt-spin-border 3s linear infinite;
+}
+
+/* Skeleton loading */
+.skeleton-warm {
+  background: linear-gradient(
+    90deg,
+    var(--snt-sk-a) 0%,
+    var(--snt-sk-b) 40%,
+    var(--snt-sk-a) 80%
+  );
+  background-size: 600px 100%;
+  animation: snt-skeleton 1.8s ease-in-out infinite;
+}
+
+/* Fade up (scroll reveal) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s cubic-bezier(.16, 1, .3, 1),
+    transform 0.6s cubic-bezier(.16, 1, .3, 1);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up:nth-child(2) { transition-delay: 0.1s; }
+.fade-up:nth-child(3) { transition-delay: 0.2s; }
+.fade-up:nth-child(4) { transition-delay: 0.3s; }
+.fade-up:nth-child(5) { transition-delay: 0.4s; }
+
+/* Glow pulse */
+.glow-pulse {
+  animation: snt-glow-pulse 2.5s ease-in-out infinite;
+}
+
+/* Status dot pulsante */
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--snt-accent);
+  animation: snt-blink 1.5s ease-in-out infinite;
+}
+
+/* Cursor glow atmosférico */
+#snt-cursor-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(201, 100, 66, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: opacity 0.4s;
+}
+
+/* ── Keyframes ── */
+@keyframes snt-spin-border {
+  to { --snt-angle: 360deg; }
+}
+
+@keyframes snt-skeleton {
+  0%   { background-position: -200px 0; }
+  100% { background-position: 400px 0; }
+}
+
+@keyframes snt-glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(201, 100, 66, 0); }
+  50%       { box-shadow: 0 0 24px rgba(201, 100, 66, 0.35); }
+}
+
+@keyframes snt-blink {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}
+
+@keyframes snt-char-up {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes snt-slide-in {
+  from { transform: translateX(20px); opacity: 0; }
+}

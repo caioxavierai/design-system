@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunter — Brand Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --bg-0: #0A0908;
+  --bg-1: #13120F;
+  --bg-2: #1C1A16;
+  --bg-3: #26231E;
+  --tx-1: #F5F4ED;
+  --tx-2: #B0AEA5;
+  --tx-3: #87867F;
+  --tx-4: #5E5D59;
+  --acc: #C96442;
+  --acc-warm: #D97757;
+  --light-bg: #F5F0E8;
+  --light-tx: #1A1714;
+}
+
+body {
+  background: var(--bg-0);
+  color: var(--tx-1);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Layout */
+.section { padding: 80px 72px; border-bottom: 1px solid var(--bg-2); }
+.section:last-child { border-bottom: none; }
+
+/* Cabeçalhos de seção */
+.sec-tag {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tx-4);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.sec-title {
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--tx-1);
+  margin-bottom: 48px;
+  letter-spacing: -0.01em;
+}
+.sec-subtitle {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tx-4);
+  margin-bottom: 20px;
+  margin-top: 48px;
+}
+
+/* Wordmark helper */
+.wm {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--acc);
+}
+
+/* Hero */
+.hero {
+  background: var(--bg-0);
+  padding: 96px 72px 80px;
+  border-bottom: 1px solid var(--bg-2);
+}
+.hero-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--tx-4);
+  margin-bottom: 56px;
+}
+.hero-wm {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 96px;
+  color: var(--acc);
+  line-height: 1;
+  margin-bottom: 48px;
+}
+.hero-spec {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.spec-item { }
+.spec-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tx-4); margin-bottom: 4px; }
+.spec-value { font-size: 14px; color: var(--tx-2); font-weight: 400; }
+.spec-value code { font-family: 'Courier New', monospace; color: var(--tx-1); background: var(--bg-2); padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+
+/* Color variants grid */
+.variants-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.variant-cell { padding: 40px 32px; display: flex; flex-direction: column; gap: 20px; }
+.variant-cell.v-dk-acc { background: var(--bg-0); }
+.variant-cell.v-dk-wh  { background: var(--bg-1); }
+.variant-cell.v-lt-dk  { background: var(--light-bg); }
+.variant-cell.v-acc-dk { background: var(--acc); }
+.variant-name { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; }
+.v-dk-acc .variant-name, .v-dk-wh .variant-name { color: var(--tx-4); }
+.v-lt-dk .variant-name  { color: #9A948C; }
+.v-acc-dk .variant-name { color: rgba(10,9,8,0.4); }
+.v-primary-badge {
+  font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 2px;
+  background: var(--acc); color: #0A0908;
+  width: fit-content;
+}
+
+/* Clear space diagram */
+.clearspace-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px;
+  background: var(--bg-1);
+  border-radius: 8px;
+  position: relative;
+}
+.cs-inner {
+  position: relative;
+  display: inline-flex;
+}
+.cs-wm {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 52px;
+  color: var(--acc);
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+.cs-box {
+  position: absolute;
+  border: 1px dashed rgba(201,100,66,0.35);
+  pointer-events: none;
+  z-index: 1;
+}
+.cs-arrow {
+  position: absolute;
+  font-size: 10px;
+  color: var(--tx-4);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* Minimum size */
+.minsize-row { display: flex; gap: 40px; align-items: flex-end; flex-wrap: wrap; }
+.minsize-item { display: flex; flex-direction: column; gap: 12px; }
+.minsize-label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tx-4); }
+.minsize-note  { font-size: 11px; color: var(--tx-3); }
+.minsize-ok  { color: #5ECF8A; font-size: 10px; margin-top: 4px; }
+.minsize-bad { color: #E06060; font-size: 10px; margin-top: 4px; }
+
+/* Fundos aprovados */
+.bg-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
+.bg-cell { padding: 28px 20px; display: flex; flex-direction: column; gap: 12px; }
+.bg-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+.bg-hex   { font-size: 11px; font-family: 'Courier New', monospace; }
+.bg-ok    { font-size: 10px; color: #5ECF8A; letter-spacing: 0.1em; }
+.bg-no    { font-size: 10px; color: #E06060; letter-spacing: 0.1em; }
+
+/* Don'ts grid */
+.donts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.dont-cell {
+  background: var(--bg-1);
+  padding: 32px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.dont-preview {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dont-rule {
+  font-size: 11px;
+  color: var(--tx-3);
+  line-height: 1.5;
+  border-top: 1px solid var(--bg-3);
+  padding-top: 12px;
+}
+.dont-rule strong { color: #E06060; display: block; margin-bottom: 2px; font-weight: 500; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Typography spec */
+.type-spec { background: var(--bg-1); border-radius: 8px; overflow: hidden; }
+.type-row { display: grid; grid-template-columns: 1fr 2fr; border-bottom: 1px solid var(--bg-2); }
+.type-row:last-child { border-bottom: none; }
+.type-meta { padding: 28px 32px; border-right: 1px solid var(--bg-2); }
+.type-meta-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tx-4); margin-bottom: 8px; }
+.type-meta-value { font-size: 13px; color: var(--tx-2); line-height: 1.6; }
+.type-meta-value code { font-family: 'Courier New', monospace; color: var(--tx-1); }
+.type-preview { padding: 28px 32px; display: flex; align-items: center; }
+
+/* Spec table */
+.spec-table { width: 100%; border-collapse: collapse; }
+.spec-table th {
+  text-align: left;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tx-4);
+  font-weight: 500;
+  padding: 12px 16px;
+  background: var(--bg-2);
+}
+.spec-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--bg-2);
+  font-size: 13px;
+  color: var(--tx-2);
+}
+.spec-table td:first-child { color: var(--tx-1); }
+.spec-table td code { font-family: 'Courier New', monospace; color: var(--tx-1); background: var(--bg-2); padding: 1px 5px; border-radius: 2px; font-size: 12px; }
+.spec-table tr:last-child td { border-bottom: none; }
+
+/* Utility */
+.note { font-size: 12px; color: var(--tx-4); line-height: 1.7; margin-top: 24px; padding-left: 16px; border-left: 2px solid var(--bg-3); }
+.note strong { color: var(--tx-3); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Sunter Tecnologia · Brand Guide · 2026</div>
+  <div class="hero-wm">sunter</div>
+  <div class="hero-spec">
+    <div class="spec-item">
+      <div class="spec-label">Tipografia</div>
+      <div class="spec-value">Syne · <code>weight 600</code></div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Caixa</div>
+      <div class="spec-value">lowercase obrigatório</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Letter-spacing</div>
+      <div class="spec-value"><code>-0.02em</code></div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Símbolo</div>
+      <div class="spec-value">nenhum — wordmark exclusivo</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Accent</div>
+      <div class="spec-value"><code>#C96442</code> · terracotta</div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. FILOSOFIA DA MARCA -->
+<div class="section">
+  <div class="sec-tag">01</div>
+  <div class="sec-title">Filosofia</div>
+  <p style="font-size:16px; color:var(--tx-2); max-width:640px; line-height:1.8; font-weight:300;">
+    A marca Sunter é o wordmark. Apenas o wordmark.<br>
+    Nenhum símbolo, ícone, ou elemento decorativo complementa a identidade — a força está na tipografia e na cor.
+    <br><br>
+    O nome <span class="wm" style="font-size:18px;">sunter</span> em lowercase com tracking fechado não é uma escolha casual:
+    é uma afirmação de <em>confiança sem arrogância</em>. Marcas que precisam de um símbolo para ser reconhecidas
+    ainda estão construindo sua identidade. A Sunter já sabe quem é.
+  </p>
+</div>
+
+<!-- 2. VARIAÇÕES DE COR -->
+<div class="section">
+  <div class="sec-tag">02</div>
+  <div class="sec-title">Variações de Cor</div>
+
+  <div class="variants-grid">
+    <!-- Terracotta on dark -->
+    <div class="variant-cell v-dk-acc">
+      <div class="variant-name" style="color:var(--tx-4);">Primária</div>
+      <div class="v-primary-badge">uso principal</div>
+      <div class="wm" style="font-size:36px;">sunter</div>
+      <div style="font-size:11px; color:var(--tx-4);">
+        <div><span style="color:var(--tx-3);">texto</span> #C96442</div>
+        <div><span style="color:var(--tx-3);">fundo</span> #0A0908 →#13120F</div>
+      </div>
+    </div>
+
+    <!-- White on dark -->
+    <div class="variant-cell v-dk-wh">
+      <div class="variant-name">Monocromática</div>
+      <div style="height:24px;"></div>
+      <div class="wm" style="font-size:36px; color:var(--tx-1);">sunter</div>
+      <div style="font-size:11px; color:var(--tx-4);">
+        <div><span style="color:var(--tx-3);">texto</span> #F5F4ED</div>
+        <div><span style="color:var(--tx-3);">uso</span> quando accent não é possível</div>
+      </div>
+    </div>
+
+    <!-- Dark on light -->
+    <div class="variant-cell v-lt-dk">
+      <div class="variant-name" style="color:#9A948C;">Light Mode</div>
+      <div style="height:24px;"></div>
+      <div class="wm" style="font-size:36px; color:#1A1714;">sunter</div>
+      <div style="font-size:11px; color:#9A948C;">
+        <div><span style="color:#7A756E;">texto</span> #1A1714</div>
+        <div><span style="color:#7A756E;">fundo</span> #F5F0E8 →#FFFFFF</div>
+      </div>
+    </div>
+
+    <!-- Dark on accent -->
+    <div class="variant-cell v-acc-dk">
+      <div class="variant-name">Invertida</div>
+      <div style="height:24px;"></div>
+      <div class="wm" style="font-size:36px; color:#0A0908;">sunter</div>
+      <div style="font-size:11px; color:rgba(10,9,8,0.45);">
+        <div>texto #0A0908</div>
+        <div>uso em fundos terracotta</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note"><strong>Regra:</strong> Nunca aplique a versão primária (terracotta) em fundos claros — o contraste é insuficiente. Use sempre a versão light mode nesses contextos.</p>
+</div>
+
+<!-- 3. ESPAÇO DE RESPIRO -->
+<div class="section">
+  <div class="sec-tag">03</div>
+  <div class="sec-title">Espaço de Respiro</div>
+
+  <p style="font-size:13px; color:var(--tx-3); margin-bottom:48px; max-width:560px; line-height:1.7;">
+    A unidade de respiro <strong style="color:var(--tx-2);">x</strong> é a altura das letras minúsculas (x-height) da marca no tamanho em que está sendo aplicada.
+    Nenhum outro elemento visual — texto, imagem, borda — pode entrar nessa área.
+  </p>
+
+  <div class="clearspace-demo">
+    <div class="cs-inner" style="padding: 40px 40px;">
+      <!-- dashed border representing clear space -->
+      <div class="cs-box" style="top:0;left:0;right:0;bottom:0;"></div>
+      <!-- x-height indicators -->
+      <div style="position:absolute; top:0; left:-52px; height:100%; display:flex; align-items:center;">
+        <div style="font-size:11px; color:var(--acc); letter-spacing:0.1em; writing-mode:vertical-rl; transform:rotate(180deg);">x height = espaço</div>
+      </div>
+      <div class="cs-wm">sunter</div>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:32px;">
+    <strong>Prático:</strong> Se o wordmark está em 24px, o espaço de respiro mínimo em cada lado é ~17px (0.72 × 24px = x-height). Em 16px → ~11px de respiro.
+  </div>
+</div>
+
+<!-- 4. TAMANHO MÍNIMO -->
+<div class="section">
+  <div class="sec-tag">04</div>
+  <div class="sec-title">Tamanho Mínimo</div>
+
+  <div class="minsize-row">
+    <div class="minsize-item">
+      <div class="minsize-label">Digital — mínimo</div>
+      <div class="wm" style="font-size:18px;">sunter</div>
+      <div class="minsize-ok">✓ 18px font-size / ~72px largura</div>
+    </div>
+    <div class="minsize-item">
+      <div class="minsize-label">Digital — recomendado</div>
+      <div class="wm" style="font-size:24px;">sunter</div>
+      <div class="minsize-ok">✓ 24px font-size / ~96px largura</div>
+    </div>
+    <div class="minsize-item" style="margin-left:48px;">
+      <div class="minsize-label">Muito pequeno ❌</div>
+      <div class="wm" style="font-size:12px;">sunter</div>
+      <div class="minsize-bad">✗ 12px — ilegível, não usar</div>
+    </div>
+    <div class="minsize-item" style="margin-left:24px; padding:24px; background:var(--bg-1); border-radius:6px;">
+      <div class="minsize-label">Print</div>
+      <div style="font-size:13px; color:var(--tx-2); line-height:1.8;">
+        Mínimo: <strong style="color:var(--tx-1);">20mm</strong> de largura<br>
+        Recomendado: 30mm+<br>
+        Resolução: 300dpi<br>
+        Formato: SVG (paths) ou PDF
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. FUNDOS APROVADOS -->
+<div class="section">
+  <div class="sec-tag">05</div>
+  <div class="sec-title">Fundos Aprovados</div>
+
+  <div class="bg-grid">
+    <div class="bg-cell" style="background:#0A0908;">
+      <div class="wm" style="font-size:22px;">sunter</div>
+      <div class="bg-label" style="color:var(--tx-4);">Canvas dark</div>
+      <div class="bg-hex" style="color:var(--tx-4);">#0A0908</div>
+      <div class="bg-ok">✓ Primário</div>
+    </div>
+    <div class="bg-cell" style="background:#13120F;">
+      <div class="wm" style="font-size:22px;">sunter</div>
+      <div class="bg-label" style="color:var(--tx-4);">Surface dark</div>
+      <div class="bg-hex" style="color:var(--tx-4);">#13120F</div>
+      <div class="bg-ok">✓ Aprovado</div>
+    </div>
+    <div class="bg-cell" style="background:#F5F0E8;">
+      <div class="wm" style="font-size:22px; color:#1A1714;">sunter</div>
+      <div class="bg-label" style="color:#9A948C;">Canvas light</div>
+      <div class="bg-hex" style="color:#9A948C;">#F5F0E8</div>
+      <div class="bg-ok" style="color:#2E8A55;">✓ Aprovado</div>
+    </div>
+    <div class="bg-cell" style="background:#FFFFFF;">
+      <div class="wm" style="font-size:22px; color:#1A1714;">sunter</div>
+      <div class="bg-label" style="color:#9A948C;">White</div>
+      <div class="bg-hex" style="color:#9A948C;">#FFFFFF</div>
+      <div class="bg-no" style="color:#B03030;">⚠ Evitar — prefira #F5F0E8</div>
+    </div>
+    <div class="bg-cell" style="background:#C96442;">
+      <div class="wm" style="font-size:22px; color:#0A0908;">sunter</div>
+      <div class="bg-label" style="color:rgba(10,9,8,0.45);">Accent</div>
+      <div class="bg-hex" style="color:rgba(10,9,8,0.45);">#C96442</div>
+      <div class="bg-ok" style="color:rgba(10,9,8,0.6);">✓ Invertida</div>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:24px;">
+    <strong>Nunca use:</strong> fundos coloridos que não sejam terracotta, fotografias sem overlay suficiente, gradientes não aprovados, ou backgrounds com contraste insuficiente (relação mínima WCAG AA: 4.5:1).
+  </p>
+</div>
+
+<!-- 6. O QUE NÃO FAZER -->
+<div class="section">
+  <div class="sec-tag">06</div>
+  <div class="sec-title">O que não fazer</div>
+
+  <div class="donts-grid">
+
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div class="wm" style="font-size:28px; transform:scaleX(1.35); display:inline-block;">sunter</div>
+      </div>
+      <div class="dont-rule">
+        <strong>❌ Esticar horizontalmente</strong>
+        Nunca distorça as proporções da fonte. Use somente o arquivo original.
+      </div>
+    </div>
+
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div class="wm" style="font-size:28px; transform:scaleY(0.6); display:inline-block;">sunter</div>
+      </div>
+      <div class="dont-rule">
+        <strong>❌ Comprimir verticalmente</strong>
+        Qualquer alteração de proporção destrói a geometria da fonte Syne.
+      </div>
+    </div>
+
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div style="font-family:'Syne',sans-serif; font-weight:600; letter-spacing:-0.02em; font-size:28px; color:#4A90D9;">sunter</div>
+      </div>
+      <div class="dont-rule">
+        <strong>❌ Cor não aprovada</strong>
+        A marca usa apenas as 4 variações de cor definidas na seção 02. Nenhuma outra.
+      </div>
+    </div>
+
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div class="wm" style="font-size:28px; text-transform:uppercase; letter-spacing:0.05em;">SUNTER</div>
+      </div>
+      <div class="dont-rule">
+        <strong>❌ Uppercase ou tracking diferente</strong>
+        Sempre lowercase, sempre -0.02em. Nunca altere caixa ou espaçamento.
+      </div>
+    </div>
+
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div class="wm" style="font-size:28px; text-shadow: 0 2px 12px rgba(201,100,66,0.8), 0 0 40px rgba(201,100,66,0.4);">sunter</div>
+      </div>
+      <div class="dont-rule">
+        <strong>❌ Efeitos visuais</strong>
+        Sem sombra, glow, outline, gradiente no texto, brilho, ou qualquer efeito aplicado ao wordmark.
+      </div>
+    </div>
+
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div style="font-family:'Manrope',sans-serif; font-weight:600; letter-spacing:-0.02em; font-size:28px; color:var(--acc);">sunter</div>
+      </div>
+      <div class="dont-rule">
+        <strong>❌ Fonte errada</strong>
+        Wordmark exclusivamente em Syne weight 600. Nunca Manrope, nunca outra fonte do sistema.
+      </div>
+    </div>
+
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div class="wm" style="font-size:28px; transform:rotate(-12deg); display:inline-block;">sunter</div>
+      </div>
+      <div class="dont-rule">
+        <strong>❌ Rotacionar</strong>
+        O wordmark é sempre horizontal. Nenhum ângulo, nenhuma inclinação.
+      </div>
+    </div>
+
+    <div class="dont-cell">
+      <div class="dont-preview" style="background:#1A3A5C; border-radius:4px; margin:-8px; width:calc(100% + 16px);">
+        <div class="wm" style="font-size:28px; color:#C96442;">sunter</div>
+      </div>
+      <div class="dont-rule">
+        <strong>❌ Fundo não aprovado</strong>
+        Fundos azuis, verdes, ou qualquer cor fora da paleta Sunter são proibidos.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 7. TIPOGRAFIA DA MARCA -->
+<div class="section">
+  <div class="sec-tag">07</div>
+  <div class="sec-title">Tipografia</div>
+
+  <div class="type-spec">
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-label">Wordmark</div>
+        <div class="type-meta-value">
+          <code>Syne 600</code><br>
+          letter-spacing <code>-0.02em</code><br>
+          uso: logotipo exclusivamente
+        </div>
+      </div>
+      <div class="type-preview">
+        <div class="wm" style="font-size:40px;">sunter</div>
+      </div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-label">Interface / UI</div>
+        <div class="type-meta-value">
+          <code>Manrope 200–500</code><br>
+          lettering natural<br>
+          uso: todo o restante
+        </div>
+      </div>
+      <div class="type-preview">
+        <div style="font-family:'Manrope',sans-serif; font-weight:300; font-size:24px; color:var(--tx-1); letter-spacing:-0.01em;">Inteligência que resolve.</div>
+      </div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-label">Código / Técnico</div>
+        <div class="type-meta-value">
+          <code>Fragment Mono 400</code><br>
+          uso: snippets, dados, terminal
+        </div>
+      </div>
+      <div class="type-preview">
+        <div style="font-family:monospace; font-size:14px; color:var(--tx-2);">npm install @sunter/ds</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Recurso</th>
+          <th>Especificação</th>
+          <th>Google Fonts URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Wordmark (Syne)</td>
+          <td><code>family=Syne:wght@600</code></td>
+          <td><code>fonts.googleapis.com/css2?family=Syne:wght@600</code></td>
+        </tr>
+        <tr>
+          <td>Interface (Manrope)</td>
+          <td><code>family=Manrope:wght@200;300;400;500</code></td>
+          <td><code>fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500</code></td>
+        </tr>
+        <tr>
+          <td>Código (Fragment Mono)</td>
+          <td><code>family=Fragment+Mono</code></td>
+          <td><code>fonts.googleapis.com/css2?family=Fragment+Mono</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 8. ARQUIVOS -->
+<div class="section">
+  <div class="sec-tag">08</div>
+  <div class="sec-title">Arquivos de Marca</div>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Arquivo</th>
+        <th>Uso</th>
+        <th>Formato</th>
+        <th>Observação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>wordmark.svg</code></td>
+        <td>Referência digital, embed web</td>
+        <td>SVG (text)</td>
+        <td>Requer Syne font disponível</td>
+      </tr>
+      <tr>
+        <td><code>wordmark-paths.svg</code></td>
+        <td>Print, embed universal</td>
+        <td>SVG (paths)</td>
+        <td>Converter via Figma / Illustrator</td>
+      </tr>
+      <tr>
+        <td><code>wordmark.pdf</code></td>
+        <td>Print profissional, gráficas</td>
+        <td>PDF vetorial</td>
+        <td>Exportar de Figma ou AI</td>
+      </tr>
+      <tr>
+        <td><code>wordmark@2x.png</code></td>
+        <td>Previews, documentos</td>
+        <td>PNG 2x (transparent)</td>
+        <td>Mínimo 400px largura</td>
+      </tr>
+      <tr>
+        <td><code>favicon.svg</code></td>
+        <td>Browser tab, PWA</td>
+        <td>SVG</td>
+        <td>"s" isolado ou wordmark compacto</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note" style="margin-top:24px;">
+    <strong>Para converter o wordmark.svg para paths:</strong> Abra no Figma → selecione o texto → Object > Flatten Selection. No Illustrator: Type > Create Outlines. Salve como <code>wordmark-paths.svg</code>.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<div style="padding:48px 72px; background:var(--bg-1); border-top:1px solid var(--bg-2);">
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;">
+    <div class="wm" style="font-size:24px;">sunter</div>
+    <div style="font-size:11px; color:var(--tx-4); text-align:right; line-height:1.8;">
+      Brand Guide v1.0 · Sunter Tecnologia · 2026<br>
+      Design System: Warm Intelligence v3.0<br>
+      Dúvidas: atualize o <code style="font-family:monospace; color:var(--tx-3);">sunter-design-system.md</code>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

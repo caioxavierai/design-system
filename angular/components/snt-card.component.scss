@@ -1,0 +1,95 @@
+.snt-card {
+  background: var(--snt-bg-2);
+  border: 1px solid var(--snt-bd-2);
+  border-radius: var(--snt-r-sm);
+  padding: 28px;
+  transition: all var(--snt-ease-md);
+
+  &:hover {
+    box-shadow: var(--snt-sh-md);
+    border-color: var(--snt-bd-3);
+  }
+}
+
+/* ── Variante Glow ── */
+.snt-card-glow {
+  &:hover {
+    box-shadow: var(--snt-sh-glow);
+    border-color: rgba(201, 100, 66, .25);
+  }
+}
+
+/* ── Variante Shimmer Border (AI-era signature) ── */
+.snt-card-shimmer {
+  position: relative;
+  border: none;
+  background: var(--snt-bg-2);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--snt-r-sm);
+    padding: 1px;
+    background: conic-gradient(
+      from var(--snt-angle),
+      transparent 0%,
+      #C96442 20%,
+      #D97757 40%,
+      transparent 60%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: snt-spin-border 3s linear infinite;
+  }
+
+  &:hover {
+    box-shadow: var(--snt-sh-glow);
+  }
+}
+
+/* ── Variante Magnetic (3D tilt via JS — ver magnetic.util.ts) ── */
+.snt-card-magnetic {
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: default;
+
+  &:hover {
+    box-shadow: var(--snt-sh-glow);
+  }
+}
+
+/* ── Card Tag (label interno de categoria) ── */
+::ng-deep .snt-card-tag {
+  font-family: var(--snt-font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--snt-accent);
+  background: rgba(201, 100, 66, .08);
+  border: 1px solid rgba(201, 100, 66, .20);
+  padding: 3px 8px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+/* ── Card Footer ── */
+::ng-deep .snt-card-footer {
+  padding-top: 14px;
+  border-top: 1px solid var(--snt-bd-2);
+  font-family: var(--snt-font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--snt-tx-3);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+@keyframes snt-spin-border {
+  to { --snt-angle: 360deg; }
+}

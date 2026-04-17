@@ -1,0 +1,110 @@
+.snt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--snt-font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--snt-r-sm);
+  transition: all var(--snt-ease);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+
+  /* Shimmer sweep on hover */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .08), transparent);
+    transition: left 0.5s;
+  }
+
+  &:hover::after {
+    left: 130%;
+  }
+
+  &:disabled,
+  &.snt-btn-loading {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+    pointer-events: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--snt-ring);
+  }
+}
+
+/* ── Variantes ── */
+
+.snt-btn-primary {
+  background: var(--snt-accent);
+  color: #fff;
+
+  &:hover {
+    background: var(--snt-accent-warm);
+    box-shadow: var(--snt-sh-glow);
+    transform: translateY(-1px);
+  }
+}
+
+.snt-btn-secondary {
+  background: var(--snt-bg-3);
+  color: var(--snt-tx-1);
+  border: 1px solid var(--snt-bd-2);
+
+  &:hover {
+    border-color: var(--snt-bd-3);
+    background: var(--snt-bg-4);
+    transform: translateY(-1px);
+  }
+}
+
+.snt-btn-ghost {
+  background: transparent;
+  color: var(--snt-tx-2);
+  border: 1px solid var(--snt-bd-2);
+
+  &:hover {
+    color: var(--snt-tx-1);
+    border-color: var(--snt-bd-a);
+    background: rgba(201, 100, 66, .04);
+  }
+}
+
+.snt-btn-destructive {
+  background: rgba(180, 50, 50, .15);
+  color: var(--snt-danger);
+  border: 1px solid rgba(180, 50, 50, .25);
+
+  &:hover {
+    background: rgba(180, 50, 50, .25);
+    transform: translateY(-1px);
+  }
+}
+
+/* ── Loading spinner ── */
+.snt-spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid rgba(255, 255, 255, .3);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: snt-spin .7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes snt-spin {
+  to { transform: rotate(360deg); }
+}

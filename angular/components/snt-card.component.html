@@ -1,0 +1,8 @@
+<div
+  class="snt-card"
+  [class.snt-card-shimmer]="shimmer || variant === 'shimmer'"
+  [class.snt-card-glow]="glow || variant === 'glow'"
+  [class.snt-card-magnetic]="magnetic || variant === 'magnetic'"
+>
+  <ng-content></ng-content>
+</div>

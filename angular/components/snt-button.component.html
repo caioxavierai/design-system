@@ -1,0 +1,10 @@
+<button
+  class="snt-btn"
+  [class]="'snt-btn snt-btn-' + variant"
+  [class.snt-btn-loading]="loading"
+  [type]="type"
+  [disabled]="disabled || loading"
+>
+  <span *ngIf="loading" class="snt-spinner" aria-hidden="true"></span>
+  <ng-content></ng-content>
+</button>

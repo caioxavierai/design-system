@@ -1,0 +1,63 @@
+.snt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--snt-font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: var(--snt-r-full);
+  border: 1px solid;
+  line-height: 1;
+}
+
+/* ── Dot ── */
+.snt-badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.snt-badge-dot-pulse {
+  animation: snt-blink 1.5s ease-in-out infinite;
+}
+
+/* ── Variantes ── */
+
+.snt-badge-active {
+  color: #5ECF8A;
+  border-color: rgba(94, 207, 138, .30);
+  background: rgba(94, 207, 138, .08);
+}
+
+.snt-badge-warn {
+  color: #D4914A;
+  border-color: rgba(212, 145, 74, .30);
+  background: rgba(212, 145, 74, .08);
+}
+
+.snt-badge-error {
+  color: #E06060;
+  border-color: rgba(224, 96, 96, .30);
+  background: rgba(224, 96, 96, .08);
+}
+
+.snt-badge-neutral {
+  color: var(--snt-tx-3);
+  border-color: var(--snt-bd-2);
+  background: var(--snt-bg-3);
+}
+
+.snt-badge-accent {
+  color: var(--snt-accent);
+  border-color: rgba(201, 100, 66, .30);
+  background: rgba(201, 100, 66, .08);
+}
+
+@keyframes snt-blink {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}
